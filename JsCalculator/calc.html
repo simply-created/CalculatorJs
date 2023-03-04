@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- BootStrap  -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+          crossorigin="anonymous"></script>
+     <!-- js files -->
+     <script src="src/script.js" defer></script>
+     <!-- css files -->
+     <link rel="stylesheet" href="style/body.css">
+
+     <title>Calculator</title>
+</head>
+
+<body class='bg-dark'>
+     <main class="d-flex justify-content-center ">
+          <div class="calculatorBody rounded-top-4 rounded-bottom-5 shadow-lg">
+               <div class="calculatorTop rounded-top-4 rounded-bottom-5">
+                    <!-- Top Screen -->
+                    <div class="">
+                         <label class="screenText ">Scientific</label>
+                         <label class="screenDivider "></label>
+                         <div id="screen" class="screen rounded-3 d-grid justify-content-center">
+                              <p id="textInScreen" class="textInScreen text-dark"></p>
+                         </div>
+                    </div>
+                    <!-- Space -->
+                    <div class="mt-0 space"></div>
+                    <!-- 3 Parts -->
+                    <div class="mt-5">
+                         <!-- Row 1 -->
+                         <div class="btnRow rounded shadow-lg mt-1">
+                              <button id="SquareRoot" class="fitRow btn btn-dark bg-gradient me-0 mx-1">
+                                   <p class="btnText" style="position: absolute; margin-left:1px; margin-top: -18px;">__
+                                   </p>
+                                   <p class="btnText" style="margin-left: -9px; margin-top: -5.5px;">√</p>
+                              </button>
+                              <button id="TENn" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left:10px; margin-top: -10px; font-size: 10px;">
+                                        n</p>
+                                   <p class="btnText" style="margin-left: -5.5px;  margin-top: -5.9px;">10</p>
+                              </button>
+                              <button id="En" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left:7px; margin-top: -9px; font-size: 10px;">
+                                        n</p>
+                                   <p class="btnText" style="margin-left: -2.5px; margin-top: -5.9px; ">E</p>
+                              </button>
+                              <button id="On" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="btnText" style="margin-left: -7px; font-size: 15px; margin-top: -5.9px;">ON
+                                   </p>
+                              </button>
+                              <button id="Off" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="btnText" style="margin-left: -10px; margin-top: -5.9px;">OFF</p>
+                              </button>
+                         </div>
+                         <!-- Row 2 -->
+                         <div class="btnRow rounded shadow-lg">
+                              <button id="Operations" class="me-0 fitRow btn btn-dark bg-gradient mx-1">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -9px; margin-top: -7px; font-size: 10px;">
+                                        OPER
+                                   </p>
+                                   <!-- has =, !=, >, >=, <, <= -->
+                              </button>
+                              <button id="delete" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -5px; margin-top: -7px; font-size: 10px;">
+                                        DEL
+                                   </p>
+                              </button>
+                              <button id="logic" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left:-10.5px; margin-top: -7px; font-size: 10px;">
+                                        LOGIC</p>
+                                   <!-- and, or , xor, nor, etc.. -->
+                              </button>
+                              <button id="XposN" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <!-- Can get any positive exponent -->
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: 8px; margin-top: -10px; font-size: 10px;">
+                                        n</p>
+                                   <p class="btnText" style="margin-left: -3px; margin-top: -5px;">X</p>
+                              </button>
+                              <button id="XnegN" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <!-- Can get any negative exponent -->
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: 5px; margin-top: -10px; font-size: 10px;">
+                                        -n</p>
+                                   <p class="btnText" style="margin-left: -3px; margin-top: -5px;">X</p>
+                              </button>
+                         </div>
+                         <!-- Row 3 -->
+                         <div class="btnRow rounded shadow-lg">
+                              <button id="changeValue" class="me-0 fitRow btn btn-dark bg-gradient mx-1">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -4px; margin-top: -8px; font-size: 10px;">
+                                        +/-
+                                   </p>
+                              </button>
+                              <button id="sin" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -5px; margin-top: -8px; font-size: 10px;">
+                                        SIN
+                                   </p>
+                              </button>
+                              <button id="cos" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -7px; margin-top: -8px; font-size: 10px;">
+                                        COS
+                                   </p>
+                              </button>
+                              <button id="tan" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -7px; margin-top: -8px; font-size: 10px;">
+                                        TAN
+                                   </p>
+                              </button>
+                              <button id="symbol" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -7px; margin-top: -8px; font-size: 10px;">
+                                        SYM
+                                   </p>
+                                   <!-- has pi, angular, newton, etc. -->
+                              </button>
+                         </div>
+                    </div>
+                    <!-- 4 Parts -->
+                    <div class="">
+                         <!--  Row 1-->
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="7" class="fitRow btn btn-secondary bg-gradient  mx-1">
+                                   <p class="btnText" style="margin-left: -1px;">7</p>
+                              </button>
+                              <button id="8" class="fitRow btn btn-secondary bg-gradient" style="margin-left: -2px;">
+                                   <p class="btnText" style="margin-left: -1px;">8</p>
+                              </button>
+                              <button id="9" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText" style="margin-left: -1px;">9</p>
+                              </button>
+                              <button id="clear" class="fitRow btn btn-danger bg-gradient">
+                                   <p class="btnText">C</p>
+                              </button>
+                              <button id="allClear" class="fitRow btn btn-danger bg-gradient ">
+                                   <p class="btnText" style="margin-left: -5.5px;">AC</p>
+                              </button>
+                         </div>
+                         <!--  Row 2-->
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="4" class="fitRow btn btn-secondary bg-gradient mx-1">
+                                   <p class="btnText" style="margin-left: -1px;">4</p>
+                              </button>
+                              <button id="5" class="fitRow btn btn-secondary bg-gradient " style="margin-left: -2px;">
+                                   <p class="btnText" style="margin-left: -1px;">5</p>
+                              </button>
+                              <button id="6" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText" style="margin-left: -1px;">6</p>
+                              </button>
+                              <button id="multiply" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText">X</p>
+                              </button>
+                              <button id="divide" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText" style="margin-left: -1.5px;">/</p>
+                              </button>
+                         </div>
+                         <!--  Row 3-->
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="1" class="fitRow btn btn-secondary bg-gradient mx-1">
+                                   <p class="btnText" style="margin-left: -1px;">1</p>
+                              </button>
+                              <button id="2" class="fitRow btn btn-secondary bg-gradient " style="margin-left: -2px;">
+                                   <p class="btnText" style="margin-left: -1px;">2</p>
+                              </button>
+                              <button id="3" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText" style="margin-left: -1px;">3</p>
+                              </button>
+                              <button id="add" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText">+</p>
+                              </button>
+                              <button id="subtract" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText" style="margin-left: -1.5px;">-</p>
+                              </button>
+                         </div>
+                         <!--  Row 4-->
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="0" class="fitRow btn btn-secondary bg-gradient mx-1">
+                                   <p class="btnText" style="margin-left: -1px; margin-top: -7px;">0</p>
+                              </button>
+                              <button id="decimal" class="fitRow btn btn-secondary bg-gradient "
+                                   style="margin-left: -2px;">
+                                   <p class="btnText h4"
+                                        style="position: absolute; margin-top: -25px; margin-left: -0.5px; font-size: 30px;">
+                                        .
+                                   </p>
+                              </button>
+                              <button id="exponent" class="fitRow btn btn-secondary bg-gradient ">
+                                   <!-- Remove this exp -->
+                                   <p class="btnText" style="margin-left: -10px;">EXP</p>
+                              </button>
+                              <button id="equal" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText">=</p>
+                              </button>
+                              <button id="enter" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText"
+                                        style="position: absolute; margin-left: -11.8px; margin-top: -8px; font-size: 10px;">
+                                        ENTER</p>
+                              </button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+</body>
+
+</html>
