@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- BootStrap  -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+          crossorigin="anonymous"></script>
+     <!-- js files -->
+     <script src="src/script.js" defer>
+          // Author: Ethan
+          // Due: Soon
+          // Description:
+               // for/of -> gets value
+               // for/in -> gets index
+               // [...Array(5).keys()]  = [0,1,2,3,4]
+          // Layout:
+               // calculator is split into 4 parts
+     </script>
+     <!-- css files -->
+     <link rel="stylesheet" href="style/body.css">
+     <link rel="stylesheet" href="style/buttons.css">
+     <title>CalculatorJs</title>
+</head>
+
+<body class='bg-light'>
+     <header>
+          <div class="card text-center card-body">
+               <!-- Tab panes -->
+               <div class="">
+                    <h1>Welcome To CalculatorJs</h1>
+                    <!-- Modal trigger button -->
+                    <button type="button" class="mt-2 btn btn-primary btn-lg" data-bs-toggle="modal"
+                         data-bs-target="#modalId">
+                         Launch Formulas
+                    </button>
+                    <!-- Modal Body -->
+                    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static"
+                         data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                              role="document">
+                              <div class="modal-content">
+                                   <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitleId">Here are the Formulas</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                             aria-label="Close"></button>
+                                   </div>
+                                   <div class="modal-body">
+                                        <ul class="list-group list-group-horizontal">
+                                             <li class="list-group-item ">Text</li>
+                                             <!-- Add Formulas here -->
+                                        </ul>
+                                   </div>
+                                   <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                             data-bs-dismiss="modal">Close</button>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </header>
+
+     <main>
+          <!-- ids from 0 -> 39 -->
+          <div class="d-flex justify-content-center">
+               <div class="calculatorBody rounded-top-4 rounded-bottom-5 shadow-lg d-flex justify-content-center ">
+                    <div class="calculatorTop rounded-top-4 rounded-bottom-5">
+                         <!-- Top Screen -->
+                         <div class="mb-3 ">
+                              <label class="screenText ">Scientific</label>
+                              <label class="screenDivider "></label>
+                              <div id="2" class="screen rounded-3 d-grid justify-content-center mt-1">
+                                   <input id="3" class="textInScreen text-dark rounded" disabled></input>
+                                   <p id="4" class="textInScreenAbove text-dark"></p>
+                              </div>
+                              <!-- Space -->
+                              <div class="mt-5 space"></div>
+                         </div>
+                         <!-- Buttons -->
+                         <div class="btnRow rounded shadow-lg ">
+                              <button id="5" class="fitRow btn btn-dark bg-gradient me-0 mx-1">
+                                   <p class="SQR btnText">__</p>
+                                   <p class="SQR2 btnText">√</p>
+                              </button>
+                              <button id="6" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="TentoN btnText">n</p>
+                                   <p class="TentoN2 btnText">10</p>
+                              </button>
+                              <button id="7" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="En btnText">n</p>
+                                   <p class="En2 btnText">E</p>
+                              </button>
+                              <button id="8" class="fitRow btn btn-dark bg-gradient me-0">
+                                   <p class="On btnText">ON</p>
+                              </button>
+                              <button id="9" class="fitRow  btn btn-dark bg-gradient me-0">
+                                   <p class="Off btnText">OFF</p>
+                              </button>
+                         </div>
+                         <div class="btnRow rounded shadow-lg">
+                              <button id="10" class="me-0 fitRow btn btn-dark bg-gradient mx-1">
+                                   <p class="Operations btnText"> OPER</p>
+                                   <!-- has =, !=, >, >=, <, <= -->
+                              </button>
+                              <button id="11" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="delete btnText">DEL</p>
+                              </button>
+                              <button id="12" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="logic btnText">LOGIC</p>
+                                   <!-- and, or , xor, nor, etc.. -->
+                              </button>
+                              <button id="13" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="XposN btnText">n</p>
+                                   <p class="XposN2 btnText">X</p>
+                              </button>
+                              <button id="14" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="XnegN btnText">-n</p>
+                                   <p class="XnegN2 btnText">X</p>
+                              </button>
+                         </div>
+                         <div class="btnRow rounded shadow-lg">
+                              <button id="15" class="me-0 fitRow btn btn-dark bg-gradient mx-1">
+                                   <p class="changeValue btnText">+/-</p>
+                              </button>
+                              <button id="16" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="sin btnText">SIN</p>
+                              </button>
+                              <button id="17" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="cos btnText">COS</p>
+                              </button>
+                              <button id="18" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="tan btnText">TAN</p>
+                              </button>
+                              <button id="19" class="me-0 fitRow btn btn-dark bg-gradient ">
+                                   <p class="symbol btnText">SYM</p>
+                                   <!-- has pi, angular, newton, etc. -->
+                              </button>
+                         </div>
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="20" class="fitRow btn btn-secondary bg-gradient  mx-1">
+                                   <p class="num btnText">7</p>
+                              </button>
+                              <button id="21" class="fitRow btn btn-secondary bg-gradient num2">
+                                   <p class="num btnText">8</p>
+                              </button>
+                              <button id="22" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="num btnText">9</p>
+                              </button>
+                              <button id="23" class="fitRow btn btn-danger bg-gradient">
+                                   <p class="btnText">C</p>
+                              </button>
+                              <button id="24" class="fitRow btn btn-danger bg-gradient ">
+                                   <p class="allClear btnText">AC</p>
+                              </button>
+                         </div>
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="25" class="fitRow btn btn-secondary bg-gradient mx-1">
+                                   <p class="num btnText">4</p>
+                              </button>
+                              <button id="26" class="fitRow btn btn-secondary bg-gradient num2">
+                                   <p class="num btnText">5</p>
+                              </button>
+                              <button id="27" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="num btnText">6</p>
+                              </button>
+                              <button id="28" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText">X</p>
+                              </button>
+                              <button id="29" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText operations2">/</p>
+                              </button>
+                         </div>
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="30" class="fitRow btn btn-secondary bg-gradient mx-1">
+                                   <p class="num btnText">1</p>
+                              </button>
+                              <button id="31" class="fitRow btn btn-secondary bg-gradient num2">
+                                   <p class="num btnText">2</p>
+                              </button>
+                              <button id="32" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="num btnText">3</p>
+                              </button>
+                              <button id="33" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText">+</p>
+                              </button>
+                              <button id="34" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText operations2">-</p>
+                              </button>
+                         </div>
+                         <div class="btnRowPad rounded shadow-lg">
+                              <button id="35" class="fitRow btn btn-secondary bg-gradient mx-1">
+                                   <p class="btnText num0">0</p>
+                              </button>
+                              <button id="36" class="num2 fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText h4 decimal">.</p>
+                              </button>
+                              <button id="37" class="fitRow btn btn-secondary bg-gradient ">
+                                   <!-- Remove this exp -->
+                                   <p class="btnText expo">EXP</p>
+                              </button>
+                              <button id="38" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText">=</p>
+                              </button>
+                              <button id="39" class="fitRow btn btn-secondary bg-gradient ">
+                                   <p class="btnText enter">ENTER</p>
+                              </button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+
+     <footer>
+          <div class="d-flex justify-content-center">
+               <div class="container-fluid mt-5" style="width:700px; height:1px; border: 1px solid rgb(0, 0, 0)">
+                    <div class="mt-3 d-flex justify-content-center">
+                         <h1 class="">Links </h1>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-center">
+                         <a class="w-100 h-100 btn" href="https://github.com/Modest-code/CalculatorJs" target="_blank">
+                              <img class="img-fluid img-thumbnail rounded"
+                                   src="https://mrpaulandrew.files.wordpress.com/2018/11/github-icon.png" width="70"
+                                   height="70">
+                         </a>
+                         <a class="w-100 h-100 btn" href="https://www.youtube.com/channel/UC38o5QwmetpgVAewCimn3pQ "
+                              target="_blank">
+                              <img class="img-fluid img-thumbnail rounded"
+                                   src="https://1.bp.blogspot.com/-qdRfUNOtjkM/XeI_00z9pzI/AAAAAAAAF4E/FeD2SvVFnKUjPAKQ_cNM6-D2ahjKb0HkQCLcBGAsYHQ/s1600/Youtube-Icon-square-2340x2340-2.png"
+                                   width="70" height="70">
+                         </a>
+                         <a class="w-100 h-100 btn" href="https://replit.com" target="_blank">
+                              <img class="img-fluid img-thumbnail rounded"
+                                   src="https://cdn-1.webcatalog.io/catalog/replit/replit-icon-filled.png" width="70"
+                                   height="70">
+                         </a>
+                    </div>
+               </div>
+          </div>
+     </footer>
+</body>
+
+</html>
